@@ -7,12 +7,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Filtro</ion-label>
+    <ion-input placeholder="Introduzca el género que desea"></ion-input> <ion-button>Filtrar</ion-button>
+  </ion-item>
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let movie of movies | async " size-xl="2" size-lg="2" size-md="4" size-sm="6" size-xs="12">
-        <ion-card>
-          <img [src]= "movie.imagen">
-          <h1>{{movie.titulo}}</h1>
+        <ion-card>  
+          <h1><img [src]= "movie.imagen"> {{movie.titulo}}</h1>
           <p>{{movie.id}}{{ movie.genero}} <br> {{movie.idioma}} <br> {{movie.precio}}</p>
         </ion-card>
       </ion-col>
