@@ -11,7 +11,7 @@ export class HomePage {
   movies: any;
 
   constructor(private httpClient: HttpClient) {
-    this.movies= this.httpClient.get('https://raw.githubusercontent.com/isabel1991/dataBaseMovies/main/moviesJson.json');
+    this.movies= this.httpClient.get('https://raw.githubusercontent.com/isabel1991/dataBaseMovies/main/movieJson.json');
   }
 
 }
