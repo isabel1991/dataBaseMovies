@@ -8,15 +8,32 @@
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-label>Filtro</ion-label>
-    <ion-input placeholder="Introduzca el género que desea"></ion-input> <ion-button>Filtrar</ion-button>
+    <ion-label>Toppings</ion-label>
+    <ion-select multiple="true" cancelText="Nah" okText="Okay!">
+      <ion-select-option value="bacon">Bacon</ion-select-option>
+      <ion-select-option value="olives">Black Olives</ion-select-option>
+      <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+      <ion-select-option value="peppers">Green Peppers</ion-select-option>
+      <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+      <ion-select-option value="onions">Onions</ion-select-option>
+      <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+      <ion-select-option value="pineapple">Pineapple</ion-select-option>
+      <ion-select-option value="sausage">Sausage</ion-select-option>
+      <ion-select-option value="Spinach">Spinach</ion-select-option>
+    </ion-select>
   </ion-item>
-  <ion-grid>
+  
+  <ion-grid style="background-color:#b3daf0a2;">
     <ion-row>
       <ion-col *ngFor="let movie of movies | async " size-xl="2" size-lg="2" size-md="4" size-sm="6" size-xs="12">
-        <ion-card>  
-          <h1><img [src]= "movie.imagen"> {{movie.titulo}}</h1>
-          <p>{{movie.id}}{{ movie.genero}} <br> {{movie.idioma}} <br> {{movie.precio}}</p>
+        <ion-card  class="contenido" >  
+          <IonCardHeader>
+            <IonCardSubtitle><img [src]= "movie.imagen"></IonCardSubtitle>
+            <IonCardTitle> {{movie.titulo}}</IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>
+            <p>{{movie.id}}{{ movie.genero}} <br> {{movie.idioma}} <br> {{movie.precio}}
+      </IonCardContent>
         </ion-card>
       </ion-col>
     </ion-row>
