@@ -16,6 +16,7 @@ import {HttpClientModule } from '@angular/common/http';
     IonicModule,
     HttpClientModule,
     HomePageRoutingModule
+    
   ],
   declarations: [HomePage]
 })

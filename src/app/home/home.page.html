@@ -7,33 +7,34 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
-    <ion-label>Toppings</ion-label>
-    <ion-select multiple="true" cancelText="Nah" okText="Okay!">
-      <ion-select-option value="bacon">Bacon</ion-select-option>
-      <ion-select-option value="olives">Black Olives</ion-select-option>
-      <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
-      <ion-select-option value="peppers">Green Peppers</ion-select-option>
-      <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
-      <ion-select-option value="onions">Onions</ion-select-option>
-      <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
-      <ion-select-option value="pineapple">Pineapple</ion-select-option>
-      <ion-select-option value="sausage">Sausage</ion-select-option>
-      <ion-select-option value="Spinach">Spinach</ion-select-option>
+  <ion-item>  
+    <ion-select [(ngModel)]= "selectedValues" multiple="true" cancelText="Cancel" okText="Ok!" placeholder="Seleccione un género a buscar">
+      <ion-label>Géneros</ion-label>
+      
+      <ion-select-option value="horror">Horror</ion-select-option>
+      <ion-select-option value="drama">Drama</ion-select-option>
+      <ion-select-option value="romance">Romance</ion-select-option>
+      <ion-select-option value="animation">Animation</ion-select-option>
+      <ion-select-option value="fantasy">Fantasy</ion-select-option>
+      <ion-select-option value="comedy">Comedy</ion-select-option>
+      <ion-select-option value="musical">Musical</ion-select-option>
+      <ion-select-option value="action">Action</ion-select-option>
+      <ion-select-option value="documentary">Documentary</ion-select-option>
+      <ion-select-option value="mystery">Mystery</ion-select-option>
     </ion-select>
   </ion-item>
   
   <ion-grid style="background-color:#b3daf0a2;">
     <ion-row>
       <ion-col *ngFor="let movie of movies | async " size-xl="2" size-lg="2" size-md="4" size-sm="6" size-xs="12">
-        <ion-card  class="contenido" >  
-          <IonCardHeader>
-            <IonCardSubtitle><img [src]= "movie.imagen"></IonCardSubtitle>
-            <IonCardTitle> {{movie.titulo}}</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
+        <ion-card  class="contenido">  
+          <ion-card-header>
+            <ion-card-subtitle><img [src]= "movie.imagen"></ion-card-subtitle>
+            <ion-card-title> {{movie.titulo}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
             <p>{{movie.id}}{{ movie.genero}} <br> {{movie.idioma}} <br> {{movie.precio}}
-      </IonCardContent>
+      </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
