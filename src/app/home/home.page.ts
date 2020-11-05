@@ -10,10 +10,10 @@ export class HomePage {
   
   movies: any; //observable!!!!
   arrayMovies: any[];
-  selectedValues:[];
+  generoSeleccionado: string;
   
  
-  generos: any[];
+  generos=[];
 
   constructor(private httpClient: HttpClient) {
     //Aqui this.movies funciona como un observable 
@@ -25,15 +25,27 @@ export class HomePage {
       this.arrayMovies = result;
       console.log(this.arrayMovies); // el resultado es undefined
       console.log(this.movies);
-      this.arrayMovies.forEach((element)=> 
+      this.arrayMovies.forEach((element)=>{
         //Guarda todos los generos (incluido los repetidos)
         //Buscar funcion para que no repita los generos  
-        this.generos=element.genero 
+        //this.generos=element.genero;
+        for(let i=0; i<this.arrayMovies.length; i++){
+          this.generos.push(element.genero);
+        }
+
+        //Hacer una criba para quitar los géneros repetidos 
+        for(var i = this.generos.length -1; i >=0; i--){
+          if(this.generos.indexOf(this.generos[i]) !== i) this.generos.splice(i,1);
+        }
         
+        console.log("generos: "+ this.generos);
         //console.log(element.genero)--> imprime tooodos los generos
           
-          );
-          console.log("generos: "+ this.generos);
+       } );
+
+      
+    
+        
           
       });
   

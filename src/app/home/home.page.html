@@ -8,19 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <ion-item>  
-    <ion-select [(ngModel)]= "selectedValues" multiple="true" cancelText="Cancel" okText="Ok!" placeholder="Seleccione un género a buscar">
+    <ion-select  multiple="true" cancelText="Cancel" okText="Ok!" placeholder="Seleccione un género a buscar">
       <ion-label>Géneros</ion-label>
-      
-      <ion-select-option value="horror">Horror</ion-select-option>
-      <ion-select-option value="drama">Drama</ion-select-option>
-      <ion-select-option value="romance">Romance</ion-select-option>
-      <ion-select-option value="animation">Animation</ion-select-option>
-      <ion-select-option value="fantasy">Fantasy</ion-select-option>
-      <ion-select-option value="comedy">Comedy</ion-select-option>
-      <ion-select-option value="musical">Musical</ion-select-option>
-      <ion-select-option value="action">Action</ion-select-option>
-      <ion-select-option value="documentary">Documentary</ion-select-option>
-      <ion-select-option value="mystery">Mystery</ion-select-option>
+      <ion-select-option *ngFor="let genero of generos" > {{genero}} </ion-select-option>
     </ion-select>
   </ion-item>
   
