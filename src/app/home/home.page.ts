@@ -11,6 +11,7 @@ export class HomePage {
   movies: any; //observable!!!!
   arrayMovies: any[];
   generoSeleccionado: string;
+  filtro: string='';
   
  
   generos=[];

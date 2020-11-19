@@ -42,3 +42,15 @@
   color: #021e31;
  
 }
+
+.buscador{
+  @media screen and (orientation: landscape){
+    display: visible;
+  
+  }
+  @media screen and (orientation: portrait){
+    display: none;
+    
+  }
+
+}
